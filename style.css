@@ -21,6 +21,8 @@
 
 body {
   overflow-x: hidden;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 a {
@@ -43,7 +45,7 @@ button:hover {background-color: var(--primary-cyan-light);}
 /* Header */
 header {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + 50px);
 }
 
 header nav {
@@ -108,7 +110,7 @@ header nav #bugger .line {
 .menu-mobile a li {
   color: white;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 30px;
 }
 
@@ -127,13 +129,13 @@ header nav #bugger .line {
   color: white;
   padding: 10px 0px;
   margin: 20px 0px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .menu-mobile aside button {
   width: 95%;
   padding: 10px 0px;
-  font-weight: bold;
+  font-weight: 500;
   border-radius: 50px;
   margin: 5px 0px 10px;
 }
@@ -141,6 +143,8 @@ header nav #bugger .line {
 header nav .menu-desktop {
   display: none;
 }
+
+/* Hero Page */
 
 header section {
   display: grid;
@@ -163,11 +167,11 @@ header section article {
 }
 
 header section article h1 {
-  font-size: 40px;
-  font-weight: 900;
+  font-size: 43px;
+  font-weight: 700;
   line-height: 45px;
   margin: 10px 0px;
-  color: var(--Dark-Violet);
+  color: var(--Dark-Blue);
 }
 
 header section article p {
@@ -180,8 +184,36 @@ header section article p {
 header section article button {
   padding: 15px 40px;
   border-radius: 50px;
-  font-weight: bold;
+  font-weight: 500;
   margin-top: 20px;
+}
+
+/* Main */
+main {
+  width: 100%;
+  height: auto;
+  background: var(--gray);
+}
+
+main section#app {
+  position: relative;
+  width: 100%;  
+}
+
+main section#app form {
+  position: absolute;
+  top: -40px;
+  left: calc((100% - 90%) / 2);
+  width: 90%;
+  border-radius: 10px;
+  margin: 0px auto;
+  padding: 20px 10px;
+  text-align: center;
+  background: var(--primary-violet) url(./images/bg-shorten-mobile.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  z-index: 3;
 }
 
 
