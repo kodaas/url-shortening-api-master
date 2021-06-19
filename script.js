@@ -1,6 +1,7 @@
 let body = document.body;
 let overlay = document.querySelector('.overlay');
 let menuMobile = document.querySelector('.menu-mobile');
+let Links = [];
 
 function openNav() {
     body.style.overflowY = 'hidden'
@@ -40,24 +41,49 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     let label = document.querySelector('label')
+    let btn = document.querySelector('#submit')
     let link = form.link
 
     if (!link.value) {
         label.style.display = "block"
+        link.style.border = "2px solid var(--secondary-red)"
         link.classList.add('bad')
     } else {
         label.style.display = "none"
-        if (label.classList.contains('bad')) label.classList.remove('bad')
+        link.style.border = "2px solid var(--primary-cyan)"
+        btn.innerHTML = `<div id="loader" style="margin: 0px 30px"></div>`
         getShortLink(link.value)
         .then((data) => {
-            console.log(data)
+            Links.unshift(data)
+            btn.innerHTML = "Shorten It!"
+            console.log(Links)
         })
         .catch((err) => {
             console.log(err)
-            label.innerHTML = "Invalid Link"
+            label.innerHTML = "Failed Check Internet Connection ;("
             label.style.display = "block"
+            btn.innerHTML = "Shorten It!"
+            link.style.border = "2px solid var(--secondary-red)"
             link.classList.add('bad')
         })
     }
-}) 
+})
+
+
+// const locals = (key , func, val = "") => {
+//     if (func === 'get') {
+//         let a = localStorage.getItem(key)
+//         return a
+//     } else if (func === 'set') {
+//         if (!val) {
+//             let a = localStorage.setItem(key, JSON.stringify(val[0]))
+//             return a
+//         }else {return false}
+//     } else if (func === 'remove') {
+//         let a = localStorage.removeItem(key)
+//         return a
+//     } else if (func === 'clear') {
+//         localStorage.clear()
+//     } else { return false }
+// }
 

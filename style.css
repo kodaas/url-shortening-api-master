@@ -485,3 +485,53 @@ footer .social a:hover {fill: var(--primary-cyan);}
   font-size: 12px;
   text-decoration: none;
 }
+
+/* Loader style start here */
+
+#loader {
+  display: inline-block;
+  border: 2px solid var(--white);
+  border-radius: 100%;
+  border-top: 2px solid hsla(257, 27%, 26%, 0.652);
+  border-left: 2px solid hsla(257, 27%, 26%, 0.652);
+  width: 20px;
+  height: 20px;
+  margin: 0px auto;
+  -webkit-animation: spin 0.7s linear infinite; /* Safari */
+  animation: spin 0.7s linear infinite;
+  z-index: 1;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    border-left: 1px solid hsla(257, 27%, 26%, 0.652);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    border-left: 0px solid hsla(257, 27%, 26%, 0.652);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    border-left: 1px solid hsla(257, 27%, 26%, 0.652);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-left: 0px solid hsla(257, 27%, 26%, 0.652);
+  }
+}
+
+/* section .container .card button:hover #loader {
+  border-top: 2px solid var(--light-gray);
+  border-left: 2px solid var(--light-gray);
+} */
+
+/* Loader style ends here */
