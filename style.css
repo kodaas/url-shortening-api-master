@@ -215,7 +215,6 @@ main section#app form {
   background: var(--primary-violet) url(./images/bg-shorten-mobile.svg);
   background-position: right;
   background-repeat: no-repeat;
-  /* background-size: contain; */
   z-index: 3;
 }
 
@@ -303,6 +302,87 @@ main section#app ul .link-card span button {
 }
 
 main section#app ul .link-card span button.copied {background-color: var(--primary-violet);}
+
+/* Advanced Statistics */
+main section#ad-stat {
+  padding: 90px 0px 0px;
+  text-align: center;
+}
+
+main section#ad-stat article.main {
+  width: 100%;
+  margin: 0px 0px 50px;
+}
+
+main section#ad-stat article.main h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  margin: 10px 0px 20px;
+  color: var(--Dark-Blue);
+}
+
+main section#ad-stat article.main p {
+  color: var(--Grayish-Violet);
+  line-height: 30px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+main section#ad-stat .container {
+  width: 100%;
+  padding: 35px 0px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 90px;
+}
+
+main section#ad-stat .container .stat-card {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  padding: 80px 13px 20px;
+  position: relative;
+}
+
+main section#ad-stat .container .stat-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  width: 8px;
+  height: 80px;
+  background-color: var(--primary-cyan);
+}
+
+main section#ad-stat .container .stat-card .img {
+  position: absolute;
+  left: calc((100% - 80px) / 2);
+  top: -40px;
+  background-color: var(--primary-violet);
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+main section#ad-stat .container .stat-card img {}
+
+main section#ad-stat .container .stat-card article h3 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 45px;
+  margin: 10px 0px 20px;
+  color: var(--Dark-Blue);
+}
+
+main section#ad-stat .container .stat-card article p {
+  color: var(--Grayish-Violet);
+  line-height: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 17px;
+}
 
 .attribution {
   font-size: 12px;
