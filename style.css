@@ -4,16 +4,17 @@
   box-sizing: border-box;
   font-size: 18px;
   font-weight: 500;
+  outline-color: inherit;
   font-family: "Poppins", sans-serif;
 }
 
 :root {
   --primary-cyan: hsl(180, 66%, 49%);
-  --primary-cyan-light: hsl(180, 95%, 60%);
+  --primary-cyan-light: hsl(180, 77%, 54%);
   --primary-violet: hsl(257, 27%, 26%);
   --secondary-red: hsl(0, 87%, 67%);
 
-  --gray: hsl(0, 0%, 75%);
+  --gray: hsl(0, 0%, 81%);
   --Grayish-Violet: hsl(257, 7%, 63%);
   --Dark-Blue: hsl(255, 11%, 22%);
   --Dark-Violet: hsl(260, 8%, 14%);
@@ -21,7 +22,7 @@
 
 body {
   overflow-x: hidden;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0px auto;
 }
 
@@ -37,15 +38,21 @@ button {
   background-color: var(--primary-cyan);
   color: white;
   border: none;
-  transition: background-color .3s ease-in-out;
+  transition: background-color .3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 button:hover {background-color: var(--primary-cyan-light);}
 
+.hr {
+  width: 100%;
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, var(--Grayish-Violet), transparent);
+}
+
 /* Header */
 header {
   width: 100%;
-  height: calc(100vh + 50px);
+  height: calc(100vh + 70px);
 }
 
 header nav {
@@ -114,12 +121,6 @@ header nav #bugger .line {
   margin-bottom: 30px;
 }
 
-.menu-mobile .hr {
-  width: 100%;
-  height: 0.5px;
-  background: linear-gradient(90deg, transparent, var(--Grayish-Violet), transparent);
-}
-
 .menu-mobile aside {
   /* border-top: 0.1px solid var(--Grayish-Violet); */
 }
@@ -167,7 +168,7 @@ header section article {
 }
 
 header section article h1 {
-  font-size: 43px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 45px;
   margin: 10px 0px;
@@ -192,22 +193,24 @@ header section article button {
 main {
   width: 100%;
   height: auto;
-  background: var(--gray);
+  background: #f0f1f6;
+  padding: 0px 25px 0px;
 }
 
 main section#app {
   position: relative;
-  width: 100%;  
+  width: 100%;
+  padding-top: 140px;
 }
 
 main section#app form {
   position: absolute;
-  top: -40px;
-  left: calc((100% - 90%) / 2);
-  width: 90%;
+  top: -70px;
+  left: calc((100% - 100%) / 2);
+  width: 100%;
   border-radius: 10px;
   margin: 0px auto;
-  padding: 20px 10px;
+  padding: 20px 20px;
   text-align: center;
   background: var(--primary-violet) url(./images/bg-shorten-mobile.svg);
   background-position: right;
@@ -216,6 +219,90 @@ main section#app form {
   z-index: 3;
 }
 
+main section#app form input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  color: var(--primary-violet);
+}
+
+main section#app form input.bad {border: 2px solid var(--secondary-red);}
+
+main section#app form input.bad::placeholder {
+  color: var(--secondary-red);
+  opacity: .5;
+}
+
+main section#app form label {
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  color: var(--secondary-red);
+  font-size: 15px;
+  font-weight: 100;
+  font-style: italic;
+  /* display: none;*/
+}
+
+main section#app form button {
+  display: block;
+  width: 100%;
+  margin: 15px 0px 5px;
+  padding: 10px 0px;
+  border-radius: 5px;
+}
+
+main section#app ul {
+  display: block;
+  margin: 0px 0px 20px;
+}
+
+main section#app ul .link-card {
+  width: 100%;
+  background-color: white;
+  padding:  10px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0px 0px 30px 5px rgba(118, 118, 118, 0.255);
+  margin: 0px 0px 20px;
+}
+
+main section#app ul .link-card p {
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gray);  
+}
+
+main section#app ul .link-card p span.new {
+  font-size: 12px;
+  color: white;
+  padding: 1px 5px;
+  border-radius: 20px;
+  margin: 0px 2px;
+}
+
+main section#app ul .link-card p span.new {background-color: rgb(62, 228, 53);}
+
+main section#app ul .link-card .hr {width: 110%;}
+
+main section#app ul .link-card span a {
+  color: var(--primary-cyan);
+}
+
+main section#app ul .link-card span button {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0px;
+  font-size: 15;
+  border-radius: 6px;
+  margin: 15px 0px 5px;
+}
+
+main section#app ul .link-card span button.copied {background-color: var(--primary-violet);}
 
 .attribution {
   font-size: 12px;
