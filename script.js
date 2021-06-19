@@ -33,17 +33,31 @@ async function getShortLink(link) {
 
 }
 
-function getFormInput() {
-    let form = document.querySelector('form')
+let form = document.querySelector('form')
+
+form.addEventListener('submit', (e) => {
+    
+    e.preventDefault()
+
     let label = document.querySelector('label')
     let link = form.link
 
-    if (!link.value || !link.value.include('://') || !link.value.include('.')) {
+    if (!link.value) {
         label.style.display = "block"
         link.classList.add('bad')
     } else {
-        getShortLink(link.value).then((data) => {
+        label.style.display = "none"
+        if (label.classList.contains('bad')) label.classList.remove('bad')
+        getShortLink(link.value)
+        .then((data) => {
             console.log(data)
         })
+        .catch((err) => {
+            console.log(err)
+            label.innerHTML = "Invalid Link"
+            label.style.display = "block"
+            link.classList.add('bad')
+        })
     }
-}
+}) 
+

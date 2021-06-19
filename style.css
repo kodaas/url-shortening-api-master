@@ -251,7 +251,7 @@ main section#app form label {
   font-size: 15px;
   font-weight: 100;
   font-style: italic;
-  /* display: none;*/
+  display: none;
 }
 
 main section#app form button {
