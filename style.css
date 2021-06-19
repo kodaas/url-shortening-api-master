@@ -463,7 +463,7 @@ footer .social a {
   color: var(--dark-gray);
 }
 .attribution a {
-  color: hsl(228, 49%, 38%);
+  color: var(--primary-cyan);
   font-size: 12px;
   text-decoration: none;
 }
